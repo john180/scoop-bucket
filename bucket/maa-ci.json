@@ -1,0 +1,37 @@
+{
+    "notes": "CI version, the second last string in version is not stable, if there is a new version which has not been updated in manifest, please contact me via github issues.",
+    "version": "5.5.1-alpha.1.d078.g3134f3d46",
+    "description": "An Arknights game assissant",
+    "homepage": "https://maa.plus/",
+    "license": "AGPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/MaaAssistantArknights/MaaRelease/releases/download/v5.5.1-alpha.1.d078.g3134f3d46/MAA-v5.5.1-alpha.1.d078.g3134f3d46-win-x64.zip",
+            "hash": "64be9194e41282a436ed585d0532b567c434d340346cd893748c08dd309883da"
+        }
+    },
+    "shortcuts": [
+        [
+            "MAA.exe",
+            "MaaAssistantArknights CI ver"
+        ]
+    ],
+    "suggest": {
+        "emulators": [
+            "nonportable/bluestacks-np",
+            "nonportable/bluestacks-hyperv-np"
+        ],
+        "adb": "adb"
+    },
+    "persist": [
+        "config",
+        "resource"
+    ],
+    "checkver": {
+        "url": "https://api.github.com/repos/MaaAssistantArknights/MaaRelease/releases",
+        "regex": "/releases/tag/(?:v)?([\\d.]+(-((alpha|beta|rc)\\.\\d(.\\w+.\\w+)?)?)?)"
+    },
+    "autoupdate": {
+        "url": "https://github.com/MaaAssistantArknights/MaaRelease/releases/download/v$version/MAA-v$version-win-x64.zip"
+    }
+}
