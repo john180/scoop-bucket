@@ -18,7 +18,7 @@
         "regex": "/releases/tag/(?:v)?([\\d.]+(-((alpha|beta|rc)\\.\\d(.\\w+.\\w+)?)?)?)"
     },
     "autoupdate": {
-        "url": "ttps://github.com/MaaEnd/MaaEnd/releases/download/v$version/MaaEnd-win-x86_64-v$version.zip"
+        "url": "https://github.com/MaaEnd/MaaEnd/releases/download/v$version/MaaEnd-win-x86_64-v$version.zip"
     },
     "architecture": {
         "64bit": {
