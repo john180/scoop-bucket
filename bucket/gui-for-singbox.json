@@ -1,5 +1,5 @@
 {
-    "version": "1.25.0",
+    "version": "1.25.1",
     "description": "GUI for SingBox",
     "homepage": "https://gui-for-cores.github.io/",
     "license": {
@@ -8,12 +8,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.0/GUI.for.SingBox-windows-amd64.zip",
-            "hash": "1c074f89a7acddb8671563fa50d5d0b28f6ac30bd6a8f47585421fe3e2af6681"
+            "url": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.1/GUI.for.SingBox-windows-amd64.zip",
+            "hash": "614da937a831d98ca08dd26ea10f8f0bd6218df74198f19183de2ba675999a27"
         },
         "arm64": {
-            "url": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.0/GUI.for.SingBox-windows-arm64.zip",
-            "hash": "c162e4b8186912655f9a21b5585f92b92a1804cb2323c0a39b3e50ba542cb13c"
+            "url": "https://github.com/GUI-for-Cores/GUI.for.SingBox/releases/download/v1.25.1/GUI.for.SingBox-windows-arm64.zip",
+            "hash": "066dbd7ca697a584244c49de905a0d954b8c7e423adb41c7dec5290f2e12580c"
         }
     },
     "shortcuts": [
