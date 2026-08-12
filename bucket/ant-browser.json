@@ -1,5 +1,5 @@
 {
-    "version": "1.3.0",
+    "version": "1.6.0",
     "description": "Desktop browser tool for multi-account isolation, proxy binding, and local environment management.",
     "homepage": "https://github.com/black-ant/Ant-Browser",
     "license": {
@@ -8,9 +8,9 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/black-ant/Ant-Browser/releases/download/V1.3.0/AntBrowser-1.3.0-windows-amd64-portable.zip",
-            "hash": "b965c8b9752f22ba9c5727d9310c87153dacfeee9f94f069879987be6e7a7d4d",
-            "extract_dir": "AntBrowser-1.3.0-windows-amd64-portable"
+            "url": "https://github.com/black-ant/Ant-Browser/releases/download/V1.6.0/AntBrowser-1.6.0-windows-amd64-portable.zip",
+            "hash": "3ca3193b1ddd57e59dd24be0069a9a1dac1e3f870cf6cbe442493f552e22c6e1",
+            "extract_dir": "AntBrowser-1.6.0-windows-amd64-portable"
         }
     },
     "shortcuts": [
