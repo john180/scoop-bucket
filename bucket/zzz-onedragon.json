@@ -1,0 +1,52 @@
+{
+    "version": "2.5.2",
+    "description": "绝区零一条龙，支持自动战斗、日常任务和空洞作战。",
+    "homepage": "https://github.com/OneDragon-Anything/ZenlessZoneZero-OneDragon",
+    "license": "GPL-3.0-only",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/OneDragon-Anything/ZenlessZoneZero-OneDragon/releases/download/v2.5.2/ZenlessZoneZero-OneDragon-v2.5.2-WithRuntime-Full.zip",
+            "hash": "af17e8402ade6944a508fa66430e93074151ee482b5f15830824f9c771bb4ee6"
+        }
+    },
+    "pre_install": [
+        "$modelSource = Join-Path $dir 'assets\\models'",
+        "$modelPersist = Join-Path $persist_dir 'assets\\models'",
+        "if ((Test-Path -LiteralPath $modelPersist) -and (Test-Path -LiteralPath $modelSource)) {",
+        "    Get-ChildItem -LiteralPath $modelSource -File -Recurse | ForEach-Object {",
+        "        $relativePath = $_.FullName.Substring($modelSource.Length + 1)",
+        "        $targetPath = Join-Path $modelPersist $relativePath",
+        "        if (!(Test-Path -LiteralPath $targetPath)) {",
+        "            New-Item -ItemType Directory -Path (Split-Path -Parent $targetPath) -Force -ErrorAction Stop | Out-Null",
+        "            Copy-Item -LiteralPath $_.FullName -Destination $targetPath -ErrorAction Stop",
+        "        }",
+        "    }",
+        "}"
+    ],
+    "shortcuts": [
+        [
+            "OneDragon-RuntimeLauncher.exe",
+            "绝区零一条龙"
+        ]
+    ],
+    "persist": [
+        "config",
+        "custom",
+        "plugins",
+        "assets\\models"
+    ],
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/OneDragon-Anything/ZenlessZoneZero-OneDragon/releases/download/v$version/ZenlessZoneZero-OneDragon-v$version-WithRuntime-Full.zip"
+            }
+        }
+    },
+    "notes": [
+        "请使用全英文且不含空格的安装路径。",
+        "首次启动仍需联网同步程序文件；完整包已包含运行时和模型，无需另行安装 Python。",
+        "启动器和运行时请通过 scoop update zzz-onedragon 更新；程序内仍可更新代码和模型。",
+        "安装指南：https://one-dragon.com/zzz/zh/quickstart.html"
+    ]
+}
