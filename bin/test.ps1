@@ -11,5 +11,13 @@ $pesterConfig = New-PesterConfiguration -Hashtable @{
         Verbosity = 'Detailed'
     }
 }
+
+# CI commits without manifest changes produce an empty set of schema test cases.
+# Pester 6 rejects empty test cases by default; Pester 5 has no such option.
+if ($pesterConfig.Run.PSObject.Properties.Name -contains 'FailOnNullOrEmptyForEach') {
+    $pesterConfig.Run.FailOnNullOrEmptyForEach = $false
+}
+
 $result = Invoke-Pester -Configuration $pesterConfig
-exit $result.FailedCount
+# Discovery and container errors may occur without any failed test cases.
+exit [int]($result.Result -ne 'Passed')
