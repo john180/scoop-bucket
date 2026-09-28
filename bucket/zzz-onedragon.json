@@ -10,6 +10,15 @@
         }
     },
     "pre_install": [
+        "# Git-managed directories must remain real directories for libgit2 checkout.",
+        "foreach ($name in @('config', 'plugins')) {",
+        "    $savedPath = Join-Path $persist_dir $name",
+        "    if (Test-Path -LiteralPath $savedPath) {",
+        "        $restorePath = Join-Path $dir $name",
+        "        New-Item -ItemType Directory -Path $restorePath -Force -ErrorAction Stop | Out-Null",
+        "        Get-ChildItem -LiteralPath $savedPath -Force | Copy-Item -Destination $restorePath -Recurse -Force -ErrorAction Stop",
+        "    }",
+        "}",
         "$modelSource = Join-Path $dir 'assets\\models'",
         "$modelPersist = Join-Path $persist_dir 'assets\\models'",
         "if ((Test-Path -LiteralPath $modelPersist) -and (Test-Path -LiteralPath $modelSource)) {",
@@ -23,6 +32,17 @@
         "    }",
         "}"
     ],
+    "pre_uninstall": [
+        "# Scoop also runs this hook before upgrades; mirror deletions as well as edits.",
+        "foreach ($name in @('config', 'plugins')) {",
+        "    $sourcePath = Join-Path $dir $name",
+        "    if (!(Test-Path -LiteralPath $sourcePath -PathType Container)) { continue }",
+        "    if ((Get-Item -LiteralPath $sourcePath -Force).Attributes -band [IO.FileAttributes]::ReparsePoint) { continue }",
+        "    $savedPath = Join-Path $persist_dir $name",
+        "    & robocopy.exe $sourcePath $savedPath /MIR /XJ /R:1 /W:1 /NFL /NDL /NJH /NJS | Out-Null",
+        "    if ($LASTEXITCODE -ge 8) { throw \"Failed to back up $name (robocopy exit code $LASTEXITCODE).\" }",
+        "}"
+    ],
     "shortcuts": [
         [
             "OneDragon-RuntimeLauncher.exe",
@@ -30,9 +50,7 @@
         ]
     ],
     "persist": [
-        "config",
         "custom",
-        "plugins",
         "assets\\models"
     ],
     "checkver": "github",
