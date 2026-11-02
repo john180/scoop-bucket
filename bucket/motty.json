@@ -13,11 +13,19 @@
             "hash": "41f416b87b26759cdda4933b027b532f57440e7effddb719935aa26eb449c48f"
         }
     },
-    "bin": "motty.exe",
+    "pre_install": [
+        "# Work around Motty's path canonicalization failing on Scoop directory junctions.",
+        "$launcher = @('@echo off', 'setlocal DisableDelayedExpansion', 'if defined GODEBUG (set \"GODEBUG=%GODEBUG%,winsymlink=0\") else (set \"GODEBUG=winsymlink=0\")')",
+        "$launcher + @('\"%~dp0motty.exe\" %*', 'exit /b %errorlevel%') | Set-Content -LiteralPath \"$dir\\motty.cmd\" -Encoding ASCII",
+        "$launcher + 'start \"\" \"%~dp0motty.exe\" %*' | Set-Content -LiteralPath \"$dir\\motty-gui.cmd\" -Encoding ASCII"
+    ],
+    "bin": "motty.cmd",
     "shortcuts": [
         [
-            "motty.exe",
-            "Motty"
+            "motty-gui.cmd",
+            "Motty",
+            "",
+            "motty.exe"
         ]
     ],
     "persist": "motty-data",
