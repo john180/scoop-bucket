@@ -1,16 +1,16 @@
 {
-    "version": "0.2.7",
+    "version": "0.4.25",
     "description": "Native SSH workspace with SFTP, port forwarding, remote desktops and an AI assistant.",
     "homepage": "https://github.com/t8y2/motty",
     "license": "Apache-2.0",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/t8y2/motty/releases/download/v0.2.7/motty-0.2.7-windows-amd64.zip",
-            "hash": "00bc868d6fb0abfc12f5206b022dccddd4baf53bec33c7c70355e36c46c7ef3a"
+            "url": "https://github.com/t8y2/motty/releases/download/v0.4.25/motty-0.4.25-windows-amd64.zip",
+            "hash": "585afdd4752d012c33b8dbb2a84882475a2fdd05cd14b1fb652281b92734a9da"
         },
         "arm64": {
-            "url": "https://github.com/t8y2/motty/releases/download/v0.2.7/motty-0.2.7-windows-arm64.zip",
-            "hash": "41f416b87b26759cdda4933b027b532f57440e7effddb719935aa26eb449c48f"
+            "url": "https://github.com/t8y2/motty/releases/download/v0.4.25/motty-0.4.25-windows-arm64.zip",
+            "hash": "2cd782d19616a33df7fbd6a088f43bb0ff86399b5fdd5655d9e920af97fbfbc3"
         }
     },
     "pre_install": [
