@@ -1,16 +1,16 @@
 {
-    "version": "0.1.12-nightly.20261123.5138",
+    "version": "0.1.12-nightly.20261123.5165",
     "description": "Desktop app for orchestrating AI coding agents (nightly builds)",
     "homepage": "https://t3.codes",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/pingdotgg/t3code/releases/download/v0.1.12-nightly.20261123.5138/T3-Code-0.1.12-nightly.20261123.5138-x64.exe#/dl.7z",
-            "hash": "sha512:6a6f3b45ffedfdcfb6942f1fc5a891f6a25e46cb26f239000218fa2c20a408d31d07f1eab4527176950851c9c3b9f11db174464c5688a38aee17eaca4ff1e19f"
+            "url": "https://github.com/pingdotgg/t3code/releases/download/v0.1.12-nightly.20261123.5165/T3-Code-0.1.12-nightly.20261123.5165-x64.exe#/dl.7z",
+            "hash": "sha512:6d2667ba676a9fa5e456e83e36adb3fb0c508a333bcb2f6704696efa3284aaea75bbac024a37c6bc4f78fc9da6052adbbe6ad5cdf47fca55b170b06c05cbef9a"
         },
         "arm64": {
-            "url": "https://github.com/pingdotgg/t3code/releases/download/v0.1.12-nightly.20261123.5138/T3-Code-0.1.12-nightly.20261123.5138-arm64.exe#/dl.7z",
-            "hash": "sha512:381e75c3d660baeeba73f3897b689b7d05d02a84242f197c4b9e384b8f068f9715e580dbeff166a11beb7665b557c0bda15b4f501d74d84f00276f38f4e79b72"
+            "url": "https://github.com/pingdotgg/t3code/releases/download/v0.1.12-nightly.20261123.5165/T3-Code-0.1.12-nightly.20261123.5165-arm64.exe#/dl.7z",
+            "hash": "sha512:146b24ff0dc3c63d0947686422be92d4a8c8d7226cffa3f13c6732df0e117f54f9d782bccab0423d17038876ab3ac2834ea400520362e76ee2849b6f8221fe58"
         }
     },
     "pre_install": [
